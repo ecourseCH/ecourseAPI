@@ -12,6 +12,11 @@ namespace EcourseApi.Persistence
         public DbSet<Notice> Notice { get; set; }
 
 
+        public EcourseDbContext(){
+            Database.Migrate();
+        }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Specify the path of the database here
